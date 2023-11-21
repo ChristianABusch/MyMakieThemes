@@ -1,7 +1,5 @@
 module MyMakieThemes
 
-export get_theme
-
 using CairoMakie
 using MathTeXEngine
 using Colors
@@ -76,4 +74,7 @@ function get_theme(
     )
     return theme
 end
+
+export get_theme
 end
+

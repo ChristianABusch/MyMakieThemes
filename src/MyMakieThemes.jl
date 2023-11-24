@@ -13,7 +13,7 @@ const unit_to_pt = Dict(
     :inch => 72,
 )
 
-function get_theme(
+function get_theme(;
     unit =:mm,
     resolution = (85, 60),
     fontsize = 12,
@@ -75,6 +75,6 @@ function get_theme(
     return theme
 end
 
-export get_theme
+export get_theme, standard_theme_colors
 end
 

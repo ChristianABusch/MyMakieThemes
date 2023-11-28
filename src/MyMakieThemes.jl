@@ -46,15 +46,10 @@ function get_theme(;
             patchsize    = (20.0, 5.0), 
             rowgap       = 5, 
             framewidth   = spine_width, 
-            labelfont    = texfont(), 
             framevisible = false,
             padding      = (5.0, 5.0, 3.0, 3.0)
         ),
         Axis = (
-            xlabelfont         = texfont(),
-            ylabelfont         = texfont(),
-            xticklabelfont     = texfont(),
-            yticklabelfont     = texfont(),
             xgridvisible       = false,
             ygridvisible       = false,
             xminorticksvisible = true,
@@ -72,9 +67,9 @@ function get_theme(;
             yminortickwidth    = spine_width,
         )
     )
+    merge!(theme, theme_latexfonts())
     return theme
 end
 
 export get_theme, standard_theme_colors
 end
-

@@ -12,7 +12,6 @@ const unit_to_pt = Dict(
     :pt => 1,
     :inch => 72,
 )
-
 function get_theme(;
     unit =:mm,
     resolution = (85, 60),
@@ -20,34 +19,36 @@ function get_theme(;
     figure_padding = 15,
     colors = standard_theme_colors,
     Nxminorticks = 2,
-    Nyminorticks = 2
+    Nyminorticks = 2,
+    markersize = 10,
+    linewidth = 2
     )
 
-    spine_width = 0.75
+    spine_width = 1.0
 
     theme = Theme(;
         CairoMakie = (pt_per_unit = 1, px_per_unit = 4),
         GLMakie    = (px_per_unit = 1,),
-        resolution = resolution .* unit_to_pt[unit],
-        fontsize,
+        resolution = 2 .* resolution .* unit_to_pt[unit],
+        fontsize = 2 * fontsize,
         figure_padding,
         palette = (
             color  = colors, 
             marker = Cycle([:circle, :rect, :utriangle]),
         ),
         Lines = (
-            linewidth = 1.25,
+            linewidth = linewidth,
             linestyle = :solid,
         ),
         Scatter = (
-            markersize = 6,
+            markersize = markersize,
         ),
         Legend = (
             patchsize    = (20.0, 5.0), 
             rowgap       = 5, 
             framewidth   = spine_width, 
-            framevisible = false,
-            padding      = (5.0, 5.0, 3.0, 3.0)
+            #framevisible = false,
+            padding      = 2 .* (5.0, 5.0, 3.0, 3.0)
         ),
         Axis = (
             xgridvisible       = false,

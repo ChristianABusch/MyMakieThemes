@@ -29,8 +29,8 @@ function get_theme(;
     theme = Theme(;
         CairoMakie = (pt_per_unit = 1, px_per_unit = 4),
         GLMakie    = (px_per_unit = 1,),
-        resolution = 2 .* resolution .* unit_to_pt[unit],
-        fontsize = 2 * fontsize,
+        size       = 2 .* resolution .* unit_to_pt[unit],
+        fontsize   = 2 * fontsize,
         figure_padding,
         palette = (
             color  = colors, 

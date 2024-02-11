@@ -47,7 +47,7 @@ function get_theme(;
             patchsize    = (20.0, 5.0), 
             rowgap       = 5, 
             framewidth   = spine_width, 
-            #framevisible = false,
+            framevisible = false,
             padding      = 2 .* (5.0, 5.0, 3.0, 3.0)
         ),
         Axis = (
